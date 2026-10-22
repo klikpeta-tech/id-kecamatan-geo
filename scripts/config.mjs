@@ -32,10 +32,21 @@ export const SIMPLIFY = {
 // Lightdash rejects custom GeoJSON files above 10 MB; stay well under it.
 export const MAX_FILE_BYTES = 9 * 1024 * 1024;
 
-export const EXPECTED_KECAMATAN = 7069;
+// The source has 7,069 admin 3 features, but 38 of them are not kecamatan: water bodies,
+// forest, empty areas and unnamed islands carry placeholder codes. Real kecamatan codes run
+// 010, 020, ...; the placeholders end in one of these digit groups (their names are "Danau",
+// "Waduk", "Perairan", "Hutan", "Pulau" and "Wilayah Kosong"). They are dropped before
+// simplification.
+export const NON_KECAMATAN_CODE_SUFFIXES = ["000", "555", "888", "999"];
+
+export const EXPECTED_SOURCE_FEATURES = 7069;
+export const EXPECTED_KECAMATAN = 7031;
 export const EXPECTED_PROVINSI = 34;
 
 export const NATIONAL_FILE = "kecamatan.geojson";
 export const PROVINSI_DIR = "provinsi";
 export const INDEX_FILE = "index.json";
+// Longitude and latitude range of Indonesia with a margin, to catch swapped or projected coordinates.
+export const BOUNDS = { minLon: 90, maxLon: 145, minLat: -15, maxLat: 10 };
+
 export const BASE_URL = "https://klikpeta-tech.github.io/id-kecamatan-geo";

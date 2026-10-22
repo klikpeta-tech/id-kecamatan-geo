@@ -10,11 +10,11 @@ Served at `https://klikpeta-tech.github.io/id-kecamatan-geo/`:
 
 | File | Content | Size |
 |---|---|---|
-| [`kecamatan.geojson`](https://klikpeta-tech.github.io/id-kecamatan-geo/kecamatan.geojson) | all 7,069 kecamatan, strongly simplified (national view) | about 7.2 MB |
+| [`kecamatan.geojson`](https://klikpeta-tech.github.io/id-kecamatan-geo/kecamatan.geojson) | all 7,031 kecamatan, strongly simplified (national view) | about 7.2 MB |
 | `provinsi/<adm1_pcode>.geojson`, for example [`provinsi/ID33.geojson`](https://klikpeta-tech.github.io/id-kecamatan-geo/provinsi/ID33.geojson) | the kecamatan of one province, simplified less (regional or provincial view) | 0.05 to 1.7 MB |
 | [`index.json`](https://klikpeta-tech.github.io/id-kecamatan-geo/index.json) | manifest: source, simplification settings, and every file with its URL, size and feature count | small |
 
-All 34 provinces are published, so every Klikpeta Sales region is covered. Every file is below 9 MB, under the 10 MB limit Lightdash enforces on custom GeoJSON files.
+One file is published for each of the 34 provinces in the source, which uses the boundaries valid from 2020. The four provinces created from Papua in 2022 (Papua Selatan, Papua Tengah, Papua Pegunungan, Papua Barat Daya) have no file of their own: their kecamatan are in `provinsi/ID94.geojson` (Papua) and `provinsi/ID91.geojson` (Papua Barat) under the old province, and `adm1_pcode` and `adm1_name` hold the old province. Kecamatan codes are unaffected, so join on `adm3_pcode`, and use the national file when a current province split is needed. There is no mapping to current provinces here. Every file is below 9 MB, under the 10 MB limit Lightdash enforces on custom GeoJSON files.
 
 Each feature is a `Polygon` or `MultiPolygon` in WGS 84 (EPSG:4326) with these properties, named as in the HDX source:
 
@@ -24,6 +24,8 @@ Each feature is a `Polygon` or `MultiPolygon` in WGS 84 (EPSG:4326) with these p
 | `adm3_name` | kecamatan name | `Mijen` |
 | `adm2_pcode`, `adm2_name` | kabupaten or kota | `ID3374`, `Kota Semarang` |
 | `adm1_pcode`, `adm1_name` | province | `ID33`, `Jawa Tengah` |
+
+The source has 7,069 admin 3 features. 38 of them are not kecamatan (lakes and reservoirs such as Danau Toba and Waduk Cirata, forest, empty areas, unnamed islands) and are left out, which is why there are 7,031. They are recognised by their placeholder codes, which end in `000`, `555`, `888` or `999` where real kecamatan codes end in `010`, `020` and so on (`NON_KECAMATAN_CODE_SUFFIXES` in `scripts/config.mjs`). A point that falls inside one of those areas does not match any kecamatan.
 
 `adm3_pcode` is unique across the national file. Kecamatan names are not (the same name repeats across kabupaten), so join on the code, not the name.
 
@@ -47,7 +49,7 @@ npm run build
 Requires Node 20 or later and `unzip`. The build:
 
 1. downloads the pinned HDX archive into `.cache/` (about 456 MB, not committed) and refuses it unless the SHA-256 matches the one in [`scripts/config.mjs`](scripts/config.mjs), so a silent re-upload on HDX cannot change the output;
-2. extracts `idn_admin3.geojson` and keeps only the properties listed above;
+2. extracts `idn_admin3.geojson`, drops the 38 non-kecamatan features and keeps only the properties listed above;
 3. simplifies with [mapshaper](https://github.com/mbloch/mapshaper) 0.6.112 (pinned in `package.json`), Visvalingam, `keep-shapes`: 3% of vertices kept for the national file and 10% for the province files;
 4. writes `public/` and validates it (feature counts, unique codes, properties, province files add up to the national file, file sizes below the limit).
 
@@ -55,8 +57,12 @@ Mapshaper reports a handful of self-intersections it could not repair after the 
 
 To move to a newer HDX release, review the new archive, then update `url`, `sha256` and `resourceModified` in `scripts/config.mjs` and rebuild.
 
-`npm run validate` re-checks the committed files without downloading anything; the pull request workflow runs it.
+`npm run validate` re-checks the committed files without downloading anything (geometry, properties, counts, file sizes, and the manifest including its URLs); the pull request workflow runs it.
 
 ## Publishing
 
 `public/` is deployed to GitHub Pages by [`.github/workflows/pages.yml`](.github/workflows/pages.yml) on every push to `main` that changes `public/`. The generated files are committed, so a rebuild is a normal reviewed pull request.
+
+One-time setup, already done for this repository: under Settings, Pages, Source must be GitHub Actions. The workflow cannot switch it on itself (`actions/configure-pages` is used without `enablement`), so a deployment fails until that is set. If the site ever stops deploying, check that setting and re-run the workflow from the Actions tab.
+
+The workflow actions are pinned to commit SHAs, with the version tag in a comment; update the SHA and the tag together.

@@ -16,31 +16,31 @@
   "national": {
     "file": "kecamatan.geojson",
     "url": "https://klikpeta-tech.github.io/id-kecamatan-geo/kecamatan.geojson",
-    "bytes": 7167781,
-    "kecamatan": 7069
+    "bytes": 7120436,
+    "kecamatan": 7031
   },
   "provinsi": [
     {
       "file": "provinsi/ID11.geojson",
       "url": "https://klikpeta-tech.github.io/id-kecamatan-geo/provinsi/ID11.geojson",
-      "bytes": 687810,
-      "kecamatan": 290,
+      "bytes": 685949,
+      "kecamatan": 289,
       "adm1_pcode": "ID11",
       "adm1_name": "Aceh"
     },
     {
       "file": "provinsi/ID12.geojson",
       "url": "https://klikpeta-tech.github.io/id-kecamatan-geo/provinsi/ID12.geojson",
-      "bytes": 991120,
-      "kecamatan": 450,
+      "bytes": 970252,
+      "kecamatan": 449,
       "adm1_pcode": "ID12",
       "adm1_name": "Sumatera Utara"
     },
     {
       "file": "provinsi/ID13.geojson",
       "url": "https://klikpeta-tech.github.io/id-kecamatan-geo/provinsi/ID13.geojson",
-      "bytes": 510861,
-      "kecamatan": 181,
+      "bytes": 507309,
+      "kecamatan": 179,
       "adm1_pcode": "ID13",
       "adm1_name": "Sumatera Barat"
     },
@@ -55,32 +55,32 @@
     {
       "file": "provinsi/ID15.geojson",
       "url": "https://klikpeta-tech.github.io/id-kecamatan-geo/provinsi/ID15.geojson",
-      "bytes": 315527,
-      "kecamatan": 143,
+      "bytes": 311934,
+      "kecamatan": 141,
       "adm1_pcode": "ID15",
       "adm1_name": "Jambi"
     },
     {
       "file": "provinsi/ID16.geojson",
       "url": "https://klikpeta-tech.github.io/id-kecamatan-geo/provinsi/ID16.geojson",
-      "bytes": 637885,
-      "kecamatan": 237,
+      "bytes": 635852,
+      "kecamatan": 236,
       "adm1_pcode": "ID16",
       "adm1_name": "Sumatera Selatan"
     },
     {
       "file": "provinsi/ID17.geojson",
       "url": "https://klikpeta-tech.github.io/id-kecamatan-geo/provinsi/ID17.geojson",
-      "bytes": 294414,
-      "kecamatan": 131,
+      "bytes": 287943,
+      "kecamatan": 128,
       "adm1_pcode": "ID17",
       "adm1_name": "Bengkulu"
     },
     {
       "file": "provinsi/ID18.geojson",
       "url": "https://klikpeta-tech.github.io/id-kecamatan-geo/provinsi/ID18.geojson",
-      "bytes": 604520,
-      "kecamatan": 237,
+      "bytes": 569308,
+      "kecamatan": 228,
       "adm1_pcode": "ID18",
       "adm1_name": "Lampung"
     },
@@ -103,24 +103,24 @@
     {
       "file": "provinsi/ID31.geojson",
       "url": "https://klikpeta-tech.github.io/id-kecamatan-geo/provinsi/ID31.geojson",
-      "bytes": 52552,
-      "kecamatan": 46,
+      "bytes": 51763,
+      "kecamatan": 44,
       "adm1_pcode": "ID31",
       "adm1_name": "Dki Jakarta"
     },
     {
       "file": "provinsi/ID32.geojson",
       "url": "https://klikpeta-tech.github.io/id-kecamatan-geo/provinsi/ID32.geojson",
-      "bytes": 1469632,
-      "kecamatan": 630,
+      "bytes": 1448102,
+      "kecamatan": 627,
       "adm1_pcode": "ID32",
       "adm1_name": "Jawa Barat"
     },
     {
       "file": "provinsi/ID33.geojson",
       "url": "https://klikpeta-tech.github.io/id-kecamatan-geo/provinsi/ID33.geojson",
-      "bytes": 1410847,
-      "kecamatan": 577,
+      "bytes": 1394888,
+      "kecamatan": 573,
       "adm1_pcode": "ID33",
       "adm1_name": "Jawa Tengah"
     },
@@ -135,8 +135,8 @@
     {
       "file": "provinsi/ID35.geojson",
       "url": "https://klikpeta-tech.github.io/id-kecamatan-geo/provinsi/ID35.geojson",
-      "bytes": 1683253,
-      "kecamatan": 667,
+      "bytes": 1681205,
+      "kecamatan": 666,
       "adm1_pcode": "ID35",
       "adm1_name": "Jawa Timur"
     },
@@ -215,24 +215,24 @@
     {
       "file": "provinsi/ID71.geojson",
       "url": "https://klikpeta-tech.github.io/id-kecamatan-geo/provinsi/ID71.geojson",
-      "bytes": 368442,
-      "kecamatan": 172,
+      "bytes": 365762,
+      "kecamatan": 171,
       "adm1_pcode": "ID71",
       "adm1_name": "Sulawesi Utara"
     },
     {
       "file": "provinsi/ID72.geojson",
       "url": "https://klikpeta-tech.github.io/id-kecamatan-geo/provinsi/ID72.geojson",
-      "bytes": 611567,
-      "kecamatan": 176,
+      "bytes": 606157,
+      "kecamatan": 175,
       "adm1_pcode": "ID72",
       "adm1_name": "Sulawesi Tengah"
     },
     {
       "file": "provinsi/ID73.geojson",
       "url": "https://klikpeta-tech.github.io/id-kecamatan-geo/provinsi/ID73.geojson",
-      "bytes": 858748,
-      "kecamatan": 309,
+      "bytes": 843187,
+      "kecamatan": 307,
       "adm1_pcode": "ID73",
       "adm1_name": "Sulawesi Selatan"
     },
@@ -247,8 +247,8 @@
     {
       "file": "provinsi/ID75.geojson",
       "url": "https://klikpeta-tech.github.io/id-kecamatan-geo/provinsi/ID75.geojson",
-      "bytes": 190667,
-      "kecamatan": 78,
+      "bytes": 189137,
+      "kecamatan": 77,
       "adm1_pcode": "ID75",
       "adm1_name": "Gorontalo"
     },
@@ -271,16 +271,16 @@
     {
       "file": "provinsi/ID82.geojson",
       "url": "https://klikpeta-tech.github.io/id-kecamatan-geo/provinsi/ID82.geojson",
-      "bytes": 416979,
-      "kecamatan": 118,
+      "bytes": 411792,
+      "kecamatan": 116,
       "adm1_pcode": "ID82",
       "adm1_name": "Maluku Utara"
     },
     {
       "file": "provinsi/ID91.geojson",
       "url": "https://klikpeta-tech.github.io/id-kecamatan-geo/provinsi/ID91.geojson",
-      "bytes": 545101,
-      "kecamatan": 177,
+      "bytes": 541386,
+      "kecamatan": 175,
       "adm1_pcode": "ID91",
       "adm1_name": "Papua Barat"
     },

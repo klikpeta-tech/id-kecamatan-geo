@@ -17,6 +17,7 @@ import {
   INDEX_FILE,
   KEEP_FIELDS,
   NATIONAL_FILE,
+  NON_KECAMATAN_CODE_SUFFIXES,
   PROVINSI_DIR,
   SIMPLIFY,
   SOURCE,
@@ -69,7 +70,8 @@ function build() {
   rmSync(join(outDir, PROVINSI_DIR), { recursive: true, force: true });
   mkdirSync(join(outDir, PROVINSI_DIR), { recursive: true });
 
-  const common = [source, "-filter-fields", KEEP_FIELDS.join(",")];
+  const kecamatanOnly = `${JSON.stringify(NON_KECAMATAN_CODE_SUFFIXES)}.indexOf(adm3_pcode.slice(-3)) === -1`;
+  const common = [source, "-filter", kecamatanOnly, "-filter-fields", KEEP_FIELDS.join(",")];
   const sort = ["-sort", "adm3_pcode"];
 
   console.log("building national file");
