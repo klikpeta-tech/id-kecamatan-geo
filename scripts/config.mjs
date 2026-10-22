@@ -24,10 +24,7 @@ export const KEEP_FIELDS = [
 ];
 
 // Visvalingam simplification, percent of removable vertices kept.
-export const SIMPLIFY = {
-  national: { percent: "3%", precision: 0.0001 },
-  provinsi: { percent: "10%", precision: 0.00001 },
-};
+export const SIMPLIFY = { percent: "3%", precision: 0.0001 };
 
 // Lightdash rejects custom GeoJSON files above 10 MB; stay well under it.
 export const MAX_FILE_BYTES = 9 * 1024 * 1024;
@@ -41,12 +38,7 @@ export const NON_KECAMATAN_CODE_SUFFIXES = ["000", "555", "888", "999"];
 
 export const EXPECTED_SOURCE_FEATURES = 7069;
 export const EXPECTED_KECAMATAN = 7031;
-export const EXPECTED_PROVINSI = 34;
 
-export const NATIONAL_FILE = "kecamatan.geojson";
-export const PROVINSI_DIR = "provinsi";
-export const INDEX_FILE = "index.json";
+export const KECAMATAN_FILE = "kecamatan.geojson";
 // Longitude and latitude range of Indonesia with a margin, to catch swapped or projected coordinates.
 export const BOUNDS = { minLon: 90, maxLon: 145, minLat: -15, maxLat: 10 };
-
-export const BASE_URL = "https://klikpeta-tech.github.io/id-kecamatan-geo";
