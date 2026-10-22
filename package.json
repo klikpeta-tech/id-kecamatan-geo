@@ -1,0 +1,15 @@
+{
+  "name": "id-kecamatan-geo",
+  "private": true,
+  "description": "Build script for simplified Indonesian kecamatan (BPS admin level 3) boundaries",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "validate": "node scripts/validate.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "mapshaper": "0.6.112"
+  }
+}
