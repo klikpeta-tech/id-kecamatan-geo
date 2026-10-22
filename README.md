@@ -10,7 +10,7 @@ Served at `https://klikpeta-tech.github.io/id-kecamatan-geo/`:
 
 | File | Content | Size |
 |---|---|---|
-| [`kecamatan.geojson`](https://klikpeta-tech.github.io/id-kecamatan-geo/kecamatan.geojson) | all 7,031 kecamatan, simplified | about 7.2 MB |
+| [`kecamatan.geojson`](https://klikpeta-tech.github.io/id-kecamatan-geo/kecamatan.geojson) | all 7,031 kecamatan, simplified | about 7.1 MB |
 
 The source uses the boundaries valid from 2020, so the four provinces created from Papua in 2022 (Papua Selatan, Papua Tengah, Papua Pegunungan, Papua Barat Daya) are not separate: their kecamatan carry the old province in `adm1_pcode` and `adm1_name` (`ID94` Papua, `ID91` Papua Barat). Kecamatan codes are unaffected, so join on `adm3_pcode`. There is no mapping to current provinces here. The file is below 9 MB, under the 10 MB limit Lightdash enforces on custom GeoJSON files.
 
